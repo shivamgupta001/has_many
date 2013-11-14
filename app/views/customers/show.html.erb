@@ -1,0 +1,14 @@
+<h1>Hello , <%=@customer.name%></h1>
+</br>
+<table>
+  <tr><td>Name</td><td>:<%=@customer.name%></td>
+  </tr>
+  <tr><td>Balance</td><td>:<%=@customer.price%></td>
+  </tr>
+  <tr><td><%=link_to :edit ,edit_customer_path(@customer)%></td><td><%=link_to :destroy , customer_path(@customer) , :method=>:delete , :confirm=>"r u sure"%></td><td>
+  </tr>
+  <tr><td><%=link_to :order_list ,customer_orders_path(@customer) %></td><td><%=link_to :place_order ,new_customer_order_path(@customer)%></td>
+  </tr>
+  <tr><td><%=link_to :back_to_index , customers_path %> </td></tr>
+</table>
+

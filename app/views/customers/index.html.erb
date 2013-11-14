@@ -1,0 +1,17 @@
+<h1>Welcome Customer</h1>
+<table>
+    <tr>
+      <th>C_name</th>
+      <th>C_balance</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+<% @customers.each do |u|%>
+    <tr>
+      <td><%= u.name%></td>
+      <td><%=u.price%></td>
+      <td><%=link_to :edit , edit_customer_path(u)%>&nbsp<%=link_to :show ,customer_path(u)%>&nbsp<%=link_to :destroy ,customer_path(u) , :method => :delete , :confirm => "are you sure"%></td>
+    </tr>
+<%end%>
+</table>
+<%=link_to :add_customer ,new_customer_path%>

@@ -1,0 +1,5 @@
+<%=form_for [@customer, @order] do |f|%>
+Order No.<%=f.text_field :order_no%>
+Cost<%=f.text_field :cost%>
+<%=f.submit%>
+<%end%>

@@ -1,0 +1,19 @@
+<h1>Welcome , <%=@customer.name%></h1>
+<table>
+  <tr><th>C_name</th>
+      <th>O_number</th>
+      <th>O_cost</th>
+      <th>Action</th>
+  </tr>
+<% @orders.each do |o|%>
+  <tr><td><%=@customer.name%></td>
+      <td><%=o.order_no%></td>
+      <td><%=o.cost%></td>
+      <td><%=link_to :edit ,edit_customer_order_path(@customer, o )%></td><td><%=link_to :cancel , customer_order_path(@customer, o) , :method => :delete , :confirm => "r u sure"%></td>
+  </tr>
+<%end%>
+  <tr><td><%=link_to :place_order , new_customer_order_path(@customer)%></td><td><%=link_to :back_to_profile ,customer_path(@customer)%></td>
+  </tr>
+</table>
+    
+
